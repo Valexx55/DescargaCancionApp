@@ -17,6 +17,7 @@
        />
 
     <ImageButton
+        android:clickable="false"
         android:onClick="reproducirVisible"
         android:id="@+id/img_repoducir"
         android:layout_width="wrap_content"
