@@ -52,19 +52,17 @@ public class DescargaCompletaReceiver extends BroadcastReceiver {
         {
             case DownloadManager.STATUS_SUCCESSFUL:
                 Log.d("ETIQUETA_LOG", "La descarga con ID " + this.id_descarga + " Acabó bien");
-                //TODO actualizar la Actividad desde donde llamamos
                 mainActivity.actualizarVentanaTrasDescarga(true);
                 break;
 
             case DownloadManager.STATUS_FAILED:
                 Log.d("ETIQUETA_LOG", "La descarga con ID " + this.id_descarga + " Acabó mal");
-                //TODO actualizar la Actividad desde donde llamamos
                 mainActivity.actualizarVentanaTrasDescarga(false);
 
                 break;
         }
 
-       //TODO hay que "desenchufar" este receiver - hacerlo que deje de escuchar.-.
+       context.unregisterReceiver(this);//DEJA DE ESCUCHAR!
     }
 
 
